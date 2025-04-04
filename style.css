@@ -1,0 +1,214 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: black;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F5F7FC;;
+  }
+  
+  .header {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  h2{
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+  }
+  
+  .header__title {
+    color: black;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    border: 0px;
+    border-bottom: 1px;
+    border-style: solid;
+  }
+  
+  .header__info {
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background: #2196F3;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .control-input {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .week-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .week-button {
+    background-color: #F5F7FC;
+    color: #2780E3;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .week-button:hover {
+    text-decoration: underline;
+  }
+  
+  .week-display {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2780E3;
+  }
+  
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .spinner {
+    border: 4px solid black;
+    border-left-color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .legend__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  
+  }
+  
+  .legend__color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  
+  .green .legend__color { background-color: #c6efce; }
+  .pink .legend__color { background-color: #ffc5c5; }
+  .blue .legend__color { background-color: #add8e6; }
+  .orange .legend__color { background-color: #ffd7b9; }
+  .dark-blue .legend__color { background-color: #4649f3; }
+  .turquoise .legend__color { background-color: #00BFFF; }
+  
+  .schedule-container {
+    overflow-x: auto;
+  }
+  
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0px;
+    border: 1px solid #2780E3;
+    text-align: center;
+  }
+  
+  .schedule-table th {
+    background-color: var(--third-color);
+    color: #2780E3;
+  }
+  
+  .schedule-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .empty-message {
+    text-align: center;
+    font-style: italic;
+    color: #666666;
+  }
+  
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+    }
+  
+    .control-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .week-controls {
+      justify-content: center;
+    }
+  
+    .legend {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .schedule-table td .pink,
+   .schedule-table td .blue,
+   .schedule-table td .orange,
+   .schedule-table td .dark-blue,
+   .schedule-table td .turquoise,
+   .schedule-table td .green {
+    height: auto;
+    border: 0px;
+    border-left: 7px;
+    border-style: solid;
+   }
+
+  .schedule-table td .green { border-color: #c6efce;}
+  .schedule-table td .pink { border-color: #ffc5c5; }
+  .schedule-table td .blue { border-color: #add8e6; }
+  .schedule-table td .orange { border-color: #ffd7b9; }
+  .schedule-table td .dark-blue {border-color: #4649f3;}
+  .schedule-table td .turquoise {border-color: #00BFFF;}

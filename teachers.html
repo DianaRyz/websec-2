@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание преподавателей</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="teacherHeader" class="header__title">Расписание преподавателя</h1>
+            <div id="teacherInfo" class="header__info"></div>
+        </header>
+
+        <div class="controls-panel">
+            <div class="control-group week-controls">
+                <button id="prevWeek" class="week-button" title="Предыдущая неделя">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <select id="weekPicker" class="control-input">
+                    <option value="">Выберите неделю</option>
+                </select>
+
+                <button id="nextWeek" class="week-button" title="Следующая неделя">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="currentWeekDisplay" class="week-display">Выберите преподавателя и неделю</div>
+
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <span>Загрузка данных...</span>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div class="legend">
+            <div class="legend__item green">
+                <span class="legend__color"></span>
+                <span class="legend__text">Лекция</span>
+            </div>
+            <div class="legend__item pink">
+                <span class="legend__color"></span>
+                <span class="legend__text">Лабораторная</span>
+            </div>
+            <div class="legend__item blue">
+                <span class="legend__color"></span>
+                <span class="legend__text">Практика</span>
+            </div>
+            <div class="legend__item dark-blue">
+                <span class="legend__color"></span>
+                <span class="legend__text">Экзамен</span>
+            </div>
+            <div class="legend__item turquoise">
+                <span class="legend__color"></span>
+                <span class="legend__text">Консультация</span>
+            </div>
+            <div class="legend__item orange">
+                <span class="legend__color"></span>
+                <span class="legend__text">Другое</span>
+            </div>
+        </div>
+
+        <div class="schedule-container">
+            <table class="schedule-table" id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Время</th>
+                        <th>Понедельник</th>
+                        <th>Вторник</th>
+                        <th>Среда</th>
+                        <th>Четверг</th>
+                        <th>Пятница</th>
+                        <th>Суббота</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                    <tr>
+                        <td colspan="7" class="empty-message">Выберите преподавателя и неделю для отображения расписания</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
